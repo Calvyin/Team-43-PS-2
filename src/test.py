@@ -7,7 +7,7 @@ with open("datasets/json-fixer.json") as f:
     db_vals = json.load(f)  # Ensure the JSON file is an array of company objects
 
 # Fields to extract for encoding and matching
-fields_to_extract = ["finCode", "name", "shortName", "securityType", "sector"]
+fields_to_extract = ["finCode", "name", "shortName", "securityType", "sector", "bseScripName"]
 
 # Prepare data for encoding by concatenating specific fields
 entries_to_encode = []
@@ -56,7 +56,7 @@ def search_funds(query: str, top_k: int = 5):
 
 # Step 5: Query Example
 query = "Funds with HDFC holdings"
-results = search_funds(query, top_k=3)
+results = search_funds(query, top_k=1)
 
 # Print the Results
 print("Matching Funds:")
